@@ -120,7 +120,7 @@ namespace KerBalloons
 
 		public void DoReset()
 		{
-			string SaveDir = "GameData/KerBalloons/LogData/";
+			string SaveDir = KSPUtil.ApplicationRootPath + "GameData/KerBalloons/LogData/";
 			if (!HighLogic.CurrentGame.Parameters.CustomParams<KerBSettings>().saveInModFolder)
 			{
 				SaveDir = KSPUtil.ApplicationRootPath + "saves/" + HighLogic.SaveFolder + "/KerBalloonDataLogs/";

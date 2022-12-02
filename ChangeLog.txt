@@ -1,5 +1,8 @@
 ChangeLog
 
+0.5.0.13
+	Fixed path for loading images (broken by new launcher)
+
 0.5.0.12
 	Fixed a memory leak
 
