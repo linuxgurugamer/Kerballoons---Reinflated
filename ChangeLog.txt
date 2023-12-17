@@ -1,5 +1,9 @@
 ChangeLog
 
+0.5.0.15
+	Thanks to github user @Clayell for this:
+		Fixes some typos and grammar
+
 0.5.0.13
 	Fixed path for loading images (broken by new launcher)
 
