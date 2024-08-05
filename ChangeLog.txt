@@ -1,5 +1,9 @@
 ChangeLog
 
+0.6.0
+	Replaced unnessicarily complex Abstract Class for initializing category with simpler code
+	Made KBFilter non-destroyable
+
 0.5.0.15
 	Thanks to github user @Clayell for this:
 		Fixes some typos and grammar
@@ -63,3 +67,4 @@ ChangeLog
 		ToolbarController
 		B9PartSwitch
 		SpaceTuxLibrary
+

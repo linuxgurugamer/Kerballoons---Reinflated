@@ -6,31 +6,28 @@ using System.Reflection;
 using UnityEngine;
 using ToolbarControl_NS;
 
+using KSP_Log;
+
 namespace Kerballoons
 {
 
     [KSPAddon(KSPAddon.Startup.MainMenu, true)]
-    public class KBFilter : BaseFilter
-    {
-        protected override string Manufacturer
-        {
-            get { return "KerBalloons"; }// part manufacturer in cfgs and agents files 
-            set { }
-        }
-        protected override string categoryTitle
-        {
-            get { return "KerBalloons"; } // the category name 
-            set { }
-        }
-    }
-
-    public abstract class BaseFilter : MonoBehaviour
+    public class KBFilter : MonoBehaviour
     {
         private readonly List<AvailablePart> parts = new List<AvailablePart>();
         internal string category = "Filter by function";
         internal bool filter = true;
-        protected abstract string Manufacturer { get; set; }
-        protected abstract string categoryTitle { get; set; }
+
+        protected  string Manufacturer
+        {
+            get { return "KerBalloons"; }// part manufacturer in cfgs and agents files 
+            set { }
+        }
+        protected  string categoryTitle
+        {
+            get { return "KerBalloons"; } // the category name 
+            set { }
+        }
 
         void Awake()
         {
@@ -47,14 +44,18 @@ namespace Kerballoons
             }
             if (parts.Count > 0)
                 GameEvents.onGUIEditorToolbarReady.Add(SubCategories);
+            DontDestroyOnLoad(this);
+
         }
 
+#if false
         void OnDestroy()
         {
             if (parts.Count > 0)
                 GameEvents.onGUIEditorToolbarReady.Remove(SubCategories);
 
         }
+#endif
 
         private bool EditorItemsFilter(AvailablePart avPart)
         {
@@ -70,15 +71,8 @@ namespace Kerballoons
 
         private Icon GetIcon(string iconName)
         {
-#if false
-            var normIcon = new Texture2D(32, 32, TextureFormat.RGBA32, false);
-            var normIconFile = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), iconName + "_off.png"); // icon to be present in same folder as dll
-            WWW www = new WWW(normIconFile);
-            www.LoadImageIntoTexture(normIcon);
-#endif
-            Texture2D normIcon = new Texture2D(2,2);
-
-            if (!ToolbarControl.LoadImageFromFile(ref normIcon, Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)+ "/../PluginData/"+ iconName + "_off.png"))
+            Texture2D normIcon = new Texture2D(2, 2);
+            if (!ToolbarControl.LoadImageFromFile(ref normIcon, Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/../PluginData/" + iconName + "_off.png"))
             {
                 Debug.Log("Error loading: " + iconName + "_off.png");
             }
