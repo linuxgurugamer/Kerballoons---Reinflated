@@ -1,6 +1,6 @@
 {
   "NAME": "KerBalloons",
-  "URL": "http://ksp.spacetux.net/avc/KerBalloons",
+  "URL": "https://raw.githubusercontent.com/linuxgurugamer/KerballoonsReinflated/refs/heads/master/KerBalloons.version",
   "DOWNLOAD": "https://github.com/linuxgurugamer/KerBalloons/releases",
   "GITHUB": {
     "USERNAME": "linuxgurugamer",
@@ -11,7 +11,7 @@
     "MAJOR": 0,
     "MINOR": 6,
     "PATCH": 0,
-    "BUILD": 0
+    "BUILD": 1
   },
   "KSP_VERSION": {
     "MAJOR": 1,

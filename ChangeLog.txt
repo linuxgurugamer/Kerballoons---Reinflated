@@ -1,5 +1,9 @@
 ChangeLog
 
+0.6.0.1
+	Fixed path for the 3.75m servcie bay config to add the missing "Assets"
+	Updated path for version file to pull from github.com
+
 0.6.0
 	Replaced unnessicarily complex Abstract Class for initializing category with simpler code
 	Made KBFilter non-destroyable
